@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS despesas_raw (
+    id BIGSERIAL PRIMARY KEY,
+    id_documento BIGINT UNIQUE,
+    id_deputado BIGINT,
+    nome_parlamentar TEXT,
+    cpf TEXT,
+    sigla_uf VARCHAR(2),
+    sigla_partido VARCHAR(50),
+    descricao TEXT,
+    fornecedor TEXT,
+    cnpj_cpf TEXT,
+    numero_documento TEXT,
+    data_emissao TIMESTAMP,
+    valor_documento NUMERIC(15,2),
+    valor_glosa NUMERIC(15,2),
+    valor_liquido NUMERIC(15,2),
+    mes INTEGER,
+    ano INTEGER,
+    url_documento TEXT
+);

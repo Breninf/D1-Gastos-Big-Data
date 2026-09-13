@@ -1,0 +1,10 @@
+node_modules/
+.env
+data/
+*.zip
+
+# Arquivos invisíveis do sistema operacional (Windows/Mac)
+Thumbs.db
+.DS_Store
+
+#O data esta no .env porque o arquivo pesa bastante. Compensa mais cada um baixar separadamente o xml e colocar manualmente no código.
