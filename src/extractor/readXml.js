@@ -44,30 +44,33 @@ function readXml(filePath, onDespesa) {
     });
 
     parser.on("closetag", (tagName) => {
-      if (!currentDespesa) {
-        return;
-      }
+  if (!currentDespesa) {
+    return;
+  }
 
-      if (tagName === "despesa") {
-        const despesa = currentDespesa;
+  if (tagName === "despesa") {
+    const despesaCompleta = currentDespesa;
+    currentDespesa = null;
+    currentElement = null;
+    currentValue = "";
 
-        currentDespesa = null;
-        currentElement = null;
-        currentValue = "";
+    stream.pause();
+    Promise.resolve(onDespesa(despesaCompleta))
+      .then(() => stream.resume())
+      .catch((error) => {
+        stream.destroy(error);
+      });
 
-        // repassa o controle de pause/resume para quem consome
-        onDespesa(despesa, control);
+    return;
+  }
 
-        return;
-      }
+  if (currentElement === tagName) {
+    currentDespesa[tagName] = currentValue;
+  }
 
-      if (currentElement === tagName) {
-        currentDespesa[tagName] = currentValue;
-      }
-
-      currentElement = null;
-      currentValue = "";
-    });
+  currentElement = null;
+  currentValue = "";
+});
 
     parser.on("error", (error) => {
       reject(error);

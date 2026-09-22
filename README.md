@@ -102,4 +102,4 @@ npm install sax pg dotenv
 Comando para teste:
 node ingestDespesas.js caminho/para/Ano-2023.xml
 
-(antes de utilizar o comando de teste, conferir se as tags em despesaRepository.js batem com as do XML de teste)
+(antes de utilizar o comando de teste, conferir se as tags em despesaRepository.js batem com as do XML de teste).
