@@ -1,0 +1,28 @@
+{
+  "name": "camara-postgres-source",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "desafio-camara-postgres",
+    "database.port": "5432",
+    "database.user": "postgres",
+    "database.password": "postgres",
+    "database.dbname": "camara",
+    "topic.prefix": "camara",
+    "plugin.name": "pgoutput",
+    "slot.name": "camara_debezium_slot",
+    "publication.name": "camara_publication",
+    "publication.autocreate.mode": "filtered",
+    "snapshot.mode": "initial",
+    "table.include.list": "public.despesas_raw",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
+    "schema.history.internal.kafka.topic": "schemahistory.camara",
+    "include.schema.changes": "false",
+    "tombstones.on.delete": "false",
+    "decimal.handling.mode": "double",
+    "time.precision.mode": "connect",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false"
+  }
+}
