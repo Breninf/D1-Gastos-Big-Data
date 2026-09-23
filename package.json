@@ -1,7 +1,27 @@
 {
   "dependencies": {
     "dotenv": "^18.0.2",
+    "kafkajs": "^2.2.4",
     "pg": "^8.23.0",
     "sax": "^1.6.1"
-  }
+  },
+  "name": "d1-gastos-big-data",
+  "version": "1.0.0",
+  "description": "Este projeto está sendo desenvolvido como parte de um desafio acadêmico voltado para o processamento e tratamento de grandes volumes de dados.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Breninf/D1-Gastos-Big-Data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Breninf/D1-Gastos-Big-Data/issues"
+  },
+  "homepage": "https://github.com/Breninf/D1-Gastos-Big-Data#readme"
 }
